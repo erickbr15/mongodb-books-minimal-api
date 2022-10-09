@@ -90,5 +90,19 @@ namespace MongoDb.Books.Main
         ///     The operation cancellation token. An instance of <see cref="CancellationToken"/>
         /// </param>
         Task DeleteAsync(ObjectId bookId, CancellationToken cancellationToken);
+
+        /// <summary>
+        ///     Searches for books that match the given criteria
+        /// </summary>
+        /// <param name="criteria">
+        ///     An instance of <see cref="SearchCriteria"/> that represents the search criteria
+        /// </param>
+        /// <param name="cancellationToken">
+        ///     An instance of <see cref="CancellationToken"/> that represents the operation cancellation token
+        /// </param>
+        /// <returns>
+        ///     An instance of <see cref="SearchResult"/>
+        /// </returns>
+        Task<SearchResult> SearchAsync(SearchCriteria criteria, CancellationToken cancellationToken);
     }
 }
